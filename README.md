@@ -43,3 +43,26 @@
 - Delete - remove existing entries form DB
 
 - 90 % changes are GET or POST only
+
+## Express Js with Node:
+
+```
+    npm i express
+```
+
+- With express, the need for `URL` and `HTTP` is diminished.
+- Express makes it much easier to write the routes (`/about`, etc) easier with readable code format.
+
+- **_Boilerplate_**
+
+```
+    const express = require("express");
+
+    const app = express();
+
+    app.get("/",(req, res)=> res.send("Home Page"));
+    app.post("/login",(req, res)=>{ ... })
+
+
+    app.listen(8000, ()=> console.log("Server Staterd..."))
+```

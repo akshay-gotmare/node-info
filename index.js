@@ -1,34 +1,17 @@
-const http = require("http");
 const fs = require("fs");
-const url = require("url");
+const express = require("express");
+const PORT = "2024";
 
-const myServer = http.createServer((req, res) => {
-  const log = `${Date.now()} : ${req.url} New request\n`;
+const app = express();
 
-  // URL managed data
-  const myUrl = url.parse(req.url, true);
-
-  if (req.url == "/favicon.ico") {
-  } else {
-    fs.appendFile("log.txt", log, (err, data) => {
-      // URL managed data
-      switch (myUrl.pathname.toLowerCase()) {
-        case "/":
-          res.end("HomePage");
-          break;
-        case "/about":
-          // URL managed data
-          const username = myUrl.query.myName;
-          console.log(username);
-          res.end(`Hello, ${username}`);
-          break;
-        default:
-          res.end("Page not found!");
-      }
-    });
-  }
+app.get("/", (req, res) => {
+  res.send("Welcome to Home page!");
 });
 
-myServer.listen("2024", () => {
-  console.log("Server listening @ http://localhost:2024/");
+app.get("/about", (req, res) => {
+  res.send("Here is the about page. \n Welcome, " + req.query.myName);
+});
+
+app.listen(PORT, () => {
+  console.log("Server activated!");
 });
