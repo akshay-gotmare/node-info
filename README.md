@@ -66,3 +66,23 @@
 
     app.listen(8000, ()=> console.log("Server Staterd..."))
 ```
+
+## REST-ful API:
+
+REST API's have some rules to be followed which make them different from regular API's
+
+- **_Rule 1_**
+
+  - Always keep in mind the `client server architecture` i.e. it is necessary to keep in mind that the server and client are 2 different entities.
+  - While sending the response to the client, we need to keep in mind what kind of data is needed for that particular client.
+  - For example, if the client is a `browser` it is a ok to send the `html` as response (using `Server Side Rendering` aka `SSR`). we cannot send the HTML respose to a client like Alexa which has no browser.
+
+- **_Rule 2_**
+
+  - Always **respect** all the `HTML Methods`.
+  - Namely, `GET`, `POST`, `PATCH`, `PUT`, `UPDATE`.
+  - Each should be used according to their purpose.
+  - E.g. it's not a good practice to `Update` with `Post` method.
+
+- **_Rule 3_**
+  - Naming of the routes should not be done as `getLoginData` when we already are passing `app.GET` that itslef defines its purpose.
