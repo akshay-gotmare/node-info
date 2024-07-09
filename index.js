@@ -1,17 +1,26 @@
 const http = require("http");
 const fs = require("fs");
+const url = require("url");
 
 const myServer = http.createServer((req, res) => {
   const log = `${Date.now()} : ${req.url} New request\n`;
+
+  // URL managed data
+  const myUrl = url.parse(req.url, true);
+
   if (req.url == "/favicon.ico") {
   } else {
     fs.appendFile("log.txt", log, (err, data) => {
-      switch (req.url.toLowerCase()) {
+      // URL managed data
+      switch (myUrl.pathname.toLowerCase()) {
         case "/":
           res.end("HomePage");
           break;
         case "/about":
-          res.end("About page");
+          // URL managed data
+          const username = myUrl.query.myName;
+          console.log(username);
+          res.end(`Hello, ${username}`);
           break;
         default:
           res.end("Page not found!");

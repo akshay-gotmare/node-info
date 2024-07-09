@@ -15,4 +15,21 @@
   - **Blocking (synchronous)**
   - **Non-blocking (asynchronous)**
 
-##
+## 2. URL (uniform resource locator):
+
+- `const url = require("url");`
+- `http://localhost:2024/about?myName=Unknown&id=1234` here
+
+  - `http` - is protocol
+  - `//localhost:2024/about?myName=Unknown&id=1234` - is domain (user friendly name)
+  - `?myName=Unknown&id=1234` - is query parameter
+  - To get each data, do:
+
+    ```
+        const myUrl = url.parse(req.url, true);
+
+        // true for parsing the **query parameter** data as well
+
+    ```
+
+    else it can be manages as plaine json object
