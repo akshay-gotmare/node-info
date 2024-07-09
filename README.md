@@ -33,3 +33,13 @@
     ```
 
     else it can be manages as plaine json object
+
+## HTTP Methods:
+
+- GET - fetch the existing data from DB
+- POST - Mutate/ send/ set some data to DB
+- PUT - Upload like image or document to DB
+- PATCH - Update some data
+- Delete - remove existing entries form DB
+
+- 90 % changes are GET or POST only
