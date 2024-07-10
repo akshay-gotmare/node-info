@@ -80,9 +80,9 @@ REST API's have some rules to be followed which make them different from regular
 - **_Rule 2_**
 
   - Always **respect** all the `HTML Methods`.
-  - Namely, `GET`, `POST`, `PATCH`, `PUT`, `UPDATE`.
+  - Namely, `GET`, `POST`, `PATCH`, `PUT`, `UPDATE`, `DELETE`.
   - Each should be used according to their purpose.
   - E.g. it's not a good practice to `Update` with `Post` method.
 
 - **_Rule 3_**
-  - Naming of the routes should not be done as `getLoginData` when we already are passing `app.GET` that itslef defines its purpose.
+  - Naming of the routes should not be done as `getLoginData` when we already are passing `app.GET` that itself defines its purpose.
